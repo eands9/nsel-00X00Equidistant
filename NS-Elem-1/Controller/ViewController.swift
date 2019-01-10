@@ -49,11 +49,16 @@ class ViewController: UIViewController {
     }
     
     func askQuestion(){
-        randomNumA = Int.random(in: 11 ..< 100)
-        randomNumB = Int.random(in: 6 ..< 100)
+        /* Find equidistant and square it then subtract the squared diff
+        83 X 87 = 85² - 2² = 7221
+        */
+        randomNumA = Int.random(in: 11 ... 69)
+        randomNumB = Int.random(in: 2 ... 5)*2
+        let numA = randomNumA
+        let numB = randomNumA + randomNumB
 
-        questionLabel.text = "\(randomNumA) X \(randomNumB)"
-        answerCorrect = randomNumA * randomNumB
+        questionLabel.text = "\(numA) X \(numB)"
+        answerCorrect = numA * numB
     }
     
     @IBAction func showBtn(_ sender: Any) {
